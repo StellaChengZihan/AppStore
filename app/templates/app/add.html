@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h2>Add New Account</h2>
+    <h2>Add New Listing</h2>
     <a href="/">Back to home</a>
 
     <p style="color:red">{{ status|safe }}</p>
@@ -9,11 +9,14 @@
         <!-- Security token by Django -->
         {% csrf_token %}
         <!-- form -->
-        <div id="div_id_name" class="control-group"> <label for="id_name" class="control-label requiredField">
-        name<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="name" maxlength="64" class="textinput textInput" required="" id="id_name"> </div> </div> <div id="div_id_accountid" class="control-group"> <label for="id_accountid" class="control-label requiredField">
-        accountid<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="accountid" maxlength="16" class="textinput textInput" required="" id="id_accountid"> </div> </div> <div id="div_id_ishost" class="control-group"> <label for="id_ishost" class="control-label requiredField">
-        ishost<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="ishost" maxlength="64" class="textinput textInput" required="" id="id_ishost"> </div> </div> 
-
+        <div id="div_id_accountid" class="control-group"> <label for="id_accountid" class="control-label requiredField">
+        Account ID<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="accountid" maxlength="16" class="textinput textInput" required="" id="id_accountid"> </div> </div> <div id="div_id_room_name" class="control-group"> <label for="id_room_name" class="control-label requiredField">
+        Room Name<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="room_name" maxlength="64" class="textinput textInput" required="" id="id_room_name"> </div> </div> <div id="div_id_id" class="control-group"> <label for="id_id" class="control-label requiredField">
+        ID<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="id" maxlength="16" class="textinput textInput" required="" id="id_id"> </div> </div> <div id="div_id_neighborhood" class="control-group"> <label for="id_neighborhood" class="control-label requiredField">
+        Neighborhood<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="neighborhood" maxlength="64" class="textinput textInput" required="" id="id_neighborhood"> </div> </div> <div id="div_id_room_type" class="control-group"> <label for="id_room_type" class="control-label requiredField">
+        Room Type<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="room_type" maxlength="64" class="textinput textInput" required="" id="id_room_type"> </div> </div> <div id="div_id_price" class="control-group"> <label for="id_price" class="control-label requiredField">
+        Price<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="price" maxlength="16" class="textinput textInput" required="" id="id_price"> </div> </div> 
+        
         <br>
         <button type="submit" value="Add">Add</button>
     </form>
