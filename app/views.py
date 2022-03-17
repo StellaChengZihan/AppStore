@@ -5,18 +5,18 @@ from django.db import connection
 def index(request):
     """Shows the main page"""
 
-    ## Delete account
+    ## Delete listing
     if request.POST:
         if request.POST['action'] == 'delete':
             with connection.cursor() as cursor:
-                cursor.execute("DELETE FROM accounts WHERE accountid = %s", [request.POST['id']])
+                cursor.execute("DELETE FROM catalog WHERE id = %s", [request.POST['id']])
 
     ## Use raw query to get all objects
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM accounts ORDER BY accountid")
-        accounts = cursor.fetchall()
+        cursor.execute("SELECT * FROM catalog ORDER BY id")
+        listings = cursor.fetchall()
 
-    result_dict = {'records': accounts}
+    result_dict = {'records': listings}
 
     return render(request,'app/index.html',result_dict)
 
@@ -24,11 +24,11 @@ def index(request):
 def view(request, id):
     """Shows the main page"""
     
-    ## Use raw query to get an account
+    ## Use raw query to get a listing
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM accounts WHERE accountid = %s", [id])
-        account = cursor.fetchone()
-    result_dict = {'cust': account}
+        cursor.execute("SELECT * FROM catalog WHERE id = %s", [id])
+        listing = cursor.fetchone()
+    result_dict = {'cust': listing}
 
     return render(request,'app/view.html',result_dict)
 
@@ -39,19 +39,19 @@ def add(request):
     status = ''
 
     if request.POST:
-        ## Check if accountid is already in the table
+        ## Check if id is already in the table
         with connection.cursor() as cursor:
 
-            cursor.execute("SELECT * FROM accounts WHERE accountid = %s", [request.POST['accountid']])
-            account = cursor.fetchone()
+            cursor.execute("SELECT * FROM catalog WHERE id = %s", [request.POST['id']])
+            listing = cursor.fetchone()
             ## No account with same id
-            if account == None:
+            if listing == None:
                 ##TODO: date validation
-                cursor.execute("INSERT INTO accounts VALUES (%s, %s, %s)"
-                        , [request.POST['name'], request.POST['accountid'], request.POST['ishost']])
+                cursor.execute("INSERT INTO catalog VALUES (%s, %s, %s, %s, %s, %s)"
+                        , [request.POST['accountid'], request.POST['name'], request.POST['id'], request.POST['neighborhood'], request.POST['room_type'], request.POST['price']])
                 return redirect('index')    
             else:
-                status = 'Account with ID %s already exists' % (request.POST['accountid'])
+                status = 'Listing with ID %s already exists' % (request.POST['id'])
 
 
     context['status'] = status
@@ -68,7 +68,7 @@ def edit(request, id):
 
     # fetch the object related to passed id
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM accounts WHERE accountid = %s", [id])
+        cursor.execute("SELECT * FROM catalog WHERE id = %s", [id])
         obj = cursor.fetchone()
 
     status = ''
@@ -77,10 +77,10 @@ def edit(request, id):
     if request.POST:
         ##TODO: date validation
         with connection.cursor() as cursor:
-            cursor.execute("UPDATE accounts SET name = %s, accountid = %s, ishost = %s WHERE accountid = %s"
-                    , [request.POST['name'], request.POST['accountid'], request.POST['ishost'], id ])
-            status = 'Account edited successfully!'
-            cursor.execute("SELECT * FROM accounts WHERE accountid = %s", [id])
+            cursor.execute("UPDATE catalog SET accountid = %s, name = %s, id = %s, neighborhood = %s, room_type = %s, price = %s WHERE id = %s"
+                    , [request.POST['accountid'], request.POST['name'], request.POST['id'], request.POST['neighborhood'], request.POST['room_type'], request.POST['price'], id ])
+            status = 'Listing edited successfully!'
+            cursor.execute("SELECT * FROM catalog WHERE id = %s", [id])
             obj = cursor.fetchone()
 
 
