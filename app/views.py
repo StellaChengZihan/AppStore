@@ -42,7 +42,7 @@ def add(request):
         ## Check if accountid is already in the table
         with connection.cursor() as cursor:
 
-            cursor.execute("SELECT * FROM account WHERE accountid = %s", [request.POST['accountid']])
+            cursor.execute("SELECT * FROM accounts WHERE accountid = %s", [request.POST['accountid']])
             account = cursor.fetchone()
             ## No account with same id
             if account == None:
