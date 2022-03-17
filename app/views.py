@@ -5,18 +5,18 @@ from django.db import connection
 def index(request):
     """Shows the main page"""
 
-    ## Delete customer
+    ## Delete account
     if request.POST:
         if request.POST['action'] == 'delete':
             with connection.cursor() as cursor:
-                cursor.execute("DELETE FROM customers WHERE customerid = %s", [request.POST['id']])
+                cursor.execute("DELETE FROM accounts WHERE accountid = %s", [request.POST['id']])
 
     ## Use raw query to get all objects
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM customers ORDER BY customerid")
-        customers = cursor.fetchall()
+        cursor.execute("SELECT * FROM accounts ORDER BY accountid")
+        accounts = cursor.fetchall()
 
-    result_dict = {'records': customers}
+    result_dict = {'records': accounts}
 
     return render(request,'app/index.html',result_dict)
 
@@ -24,11 +24,11 @@ def index(request):
 def view(request, id):
     """Shows the main page"""
     
-    ## Use raw query to get a customer
+    ## Use raw query to get an account
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM customers WHERE customerid = %s", [id])
-        customer = cursor.fetchone()
-    result_dict = {'cust': customer}
+        cursor.execute("SELECT * FROM accounts WHERE accountid = %s", [id])
+        account = cursor.fetchone()
+    result_dict = {'cust': account}
 
     return render(request,'app/view.html',result_dict)
 
@@ -39,20 +39,19 @@ def add(request):
     status = ''
 
     if request.POST:
-        ## Check if customerid is already in the table
+        ## Check if accountid is already in the table
         with connection.cursor() as cursor:
 
-            cursor.execute("SELECT * FROM customers WHERE customerid = %s", [request.POST['customerid']])
-            customer = cursor.fetchone()
-            ## No customer with same id
-            if customer == None:
+            cursor.execute("SELECT * FROM account WHERE accountid = %s", [request.POST['accountid']])
+            account = cursor.fetchone()
+            ## No account with same id
+            if account == None:
                 ##TODO: date validation
-                cursor.execute("INSERT INTO customers VALUES (%s, %s, %s, %s, %s, %s, %s)"
-                        , [request.POST['first_name'], request.POST['last_name'], request.POST['email'],
-                           request.POST['dob'] , request.POST['since'], request.POST['customerid'], request.POST['country'] ])
+                cursor.execute("INSERT INTO accounts VALUES (%s, %s, %s)"
+                        , [request.POST['name'], request.POST['accountid'], request.POST['ishost']])
                 return redirect('index')    
             else:
-                status = 'Customer with ID %s already exists' % (request.POST['customerid'])
+                status = 'Account with ID %s already exists' % (request.POST['accountid'])
 
 
     context['status'] = status
@@ -69,7 +68,7 @@ def edit(request, id):
 
     # fetch the object related to passed id
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM customers WHERE customerid = %s", [id])
+        cursor.execute("SELECT * FROM accounts WHERE accountid = %s", [id])
         obj = cursor.fetchone()
 
     status = ''
@@ -78,11 +77,10 @@ def edit(request, id):
     if request.POST:
         ##TODO: date validation
         with connection.cursor() as cursor:
-            cursor.execute("UPDATE customers SET first_name = %s, last_name = %s, email = %s, dob = %s, since = %s, country = %s WHERE customerid = %s"
-                    , [request.POST['first_name'], request.POST['last_name'], request.POST['email'],
-                        request.POST['dob'] , request.POST['since'], request.POST['country'], id ])
-            status = 'Customer edited successfully!'
-            cursor.execute("SELECT * FROM customers WHERE customerid = %s", [id])
+            cursor.execute("UPDATE accounts SET name = %s, accountid = %s, ishost = %s WHERE accountid = %s"
+                    , [request.POST['name'], request.POST['accountid'], request.POST['ishost'], id ])
+            status = 'Account edited successfully!'
+            cursor.execute("SELECT * FROM accounts WHERE accountid = %s", [id])
             obj = cursor.fetchone()
 
 
