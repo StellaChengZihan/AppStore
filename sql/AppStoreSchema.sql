@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS catalog(
  id VARCHAR(16) PRIMARY KEY,
  neighborhood VARCHAR(64) NOT NULL,
  room_type VARCHAR(64) NOT NULL,
- price NUMERIC NOT NULL;
+ price NUMERIC NOT NULL);
   
 /* 
 CREATE TABLE downloads(
