@@ -3,13 +3,12 @@
 <body>
     <h2>Customers in the App Store</h2>
     <img src="{% static 'app/images/nus.jpg' %}" width="10%"   alt="NUS logo"/><br/>
-    <a href="add">New customer</a>
+    <a href="add">New account</a>
     <br/><br/>
     <table border=1>
         <thead>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Name</th>
             <th>Action</th>
         </thead>
         {% for cust in records %}
