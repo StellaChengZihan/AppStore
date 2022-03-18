@@ -32,13 +32,7 @@ INSERT INTO catalog VALUES ('1584407', 'East Coast Boutique', '756267', 'Marine 
 INSERT INTO catalog VALUES ('1584407', 'Boutique 2 Bedroom Apartment', '819034', 'Marine Parade', 'Entire home/apt', 300);
 INSERT INTO catalog VALUES ('1584407', 'East Coast Hideaway', '819044', 'Marine Parade', 'Private room', 150);
 INSERT INTO catalog VALUES ('3926646', 'Fantastic Serviced Apartment in the Singapore CBD', '1941719', 'Downtown Core', 'Private room', 119);
+INSERT INTO catalog VALUES ('8881470', 'Ladies-Only Shared Room @ Chinatown', '1678744', 'Outram', 'Shared room', 63);
+INSERT INTO catalog VALUES ('8881470', 'Private Room for 6pax @ Chinatown', '1678754', 'Outram', 'Hotel room', 378);
+INSERT INTO catalog VALUES ('8881470', 'Mixed Shared Room @ Chinatown', '1678755', 'Outram', 'Hotel room', 63);
 
-
-INSERT INTO catalog VALUES ('1975201', 'Heritage Apartment Room near Orchard', '395191', 'Bukit Timah', 'Private room', 80);
-INSERT INTO catalog VALUES ('2386154', 'Master Bedroom in Newly Built Flat', '481789', 'Tampines', 'Private room', 37);
-INSERT INTO catalog VALUES ('2996022', 'Boutique 1 bedroom entiere appart', '604966', 'Bukit Timah', 'Entire home/apt', 271);
-INSERT INTO catalog VALUES ('813925', 'Ensuite room, pool, near airport, expo and sutd.', '606784', 'Tampines', 'Private room', 83);
-INSERT INTO catalog VALUES ('3212572', 'BEST CITY LIVING WITH GA RESIDENCE', '642660', 'Rochor', 'Private room', 163);
-INSERT INTO catalog VALUES ('1289033', 'Quiet ensuite room in Holland Village', '696136', 'Bukit Timah', 'Private room', 100);
-INSERT INTO catalog VALUES ('367042', 'B&B  Room 1 near Airport & EXPO', '71896', 'Tampines', 'Private room', 82);
-INSERT INTO catalog VALUES ('367042', 'Room 2-near Airport & EXPO', '71903', 'Tampines', 'Private room', 82);
