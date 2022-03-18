@@ -25,11 +25,11 @@ INSERT INTO catalog VALUES ('1439258', '10 Min Walk to HawParVilla MRT - INSEAD 
 INSERT INTO catalog VALUES ('1521514', '5 mins walk from Newton subway', '294281', 'Newton', 'Private room', 72);
 INSERT INTO catalog VALUES ('1521514', '5mins from Newton Train Station', '369141', 'Newton', 'Private room', 69);
 INSERT INTO catalog VALUES ('1521514', '5 mins walk from Newton MRT', '369145', 'Newton', 'Private room', 66);
+INSERT INTO catalog VALUES ('3824517', 'Homestay at Serangoon', '733863', 'Serangoon', 'Private room', 26);
+INSERT INTO catalog VALUES ('3926646', 'Fantastic Serviced Apartment in the Singapore CBD', '747813', 'Downtown Core', 'Private room', 119);
+INSERT INTO catalog VALUES ('3926646', 'Fantastic Serviced Apartment in the Singapore CBD', '747816', 'Downtown Core', 'Private room', 119);
 
 
-INSERT INTO catalog VALUES ('227796', 'Pleasant Room along Bukit Timah', '50646', 'Bukit Timah', 'Private room', 80);
-INSERT INTO catalog VALUES ('367042', 'Ensuite Room (Room 1 & 2) near EXPO', '71609', 'Tampines', 'Private room', 179);
-INSERT INTO catalog VALUES ('1439258', 'Conveniently located City Room!(1,2,3,4,5,6,7,8)', '275343', 'Bukit Merah', 'Private room', 52);
 INSERT INTO catalog VALUES ('1759905', 'Double room in an Authentic Peranakan Shophouse', '355955', 'Geylang', 'Private room', 65);
 INSERT INTO catalog VALUES ('1975201', 'Heritage Apartment Room near Orchard', '395191', 'Bukit Timah', 'Private room', 80);
 INSERT INTO catalog VALUES ('2386154', 'Master Bedroom in Newly Built Flat', '481789', 'Tampines', 'Private room', 37);
