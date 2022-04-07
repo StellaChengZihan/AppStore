@@ -31,15 +31,3 @@ insert into Catalog (ID_account, title, rating, country, city, price_per_night, 
 insert into Catalog (ID_account, title, rating, country, city, price_per_night, type, address, guests, bedrooms, kitchen, parking, wifi, smoking_allowed, pets_allowed, air_conditioning, TV, washing_machine) values (89, 'Walking Distance to MRT', 5.5, 'Canada', 'Toronto', 412, 'Apartment', '307 Sugar Terrace', 1, 4, 'Yes', 'No', 'Yes', 'No', 'Yes', 'No', 'No', 'No');
 insert into Catalog (ID_account, title, rating, country, city, price_per_night, type, address, guests, bedrooms, kitchen, parking, wifi, smoking_allowed, pets_allowed, air_conditioning, TV, washing_machine) values (96, 'Balcony room for 2', 6.4, 'Norway', 'Oslo', 317, 'House', '3 Crownhardt Park', 2, 1, 'No', 'No', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes');
 insert into Catalog (ID_account, title, rating, country, city, price_per_night, type, address, guests, bedrooms, kitchen, parking, wifi, smoking_allowed, pets_allowed, air_conditioning, TV, washing_machine) values (100, 'Affordable Common Room in City', 3.4, 'Indonesia', 'Jarkata', 150, 'Condominium', '36662 Mccormick Pass', 5, 6, 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'Yes', 'No', 'No');
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
