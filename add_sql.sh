@@ -1,9 +1,9 @@
 # Construct the URI from the .env
-DB_HOST=ec2-3-216-221-31.compute-1.amazonaws.com
-DB_NAME=daijtap81oe07r
-DB_USER=fqqynkhotwcolw
-DB_PORT=5432
-DB_PASSWORD=6b3ba3a8235c7c4e3197e643973b9ef452416d2013bbdaae730816aea1bd45c6
+DB_HOST=''
+DB_NAME=''
+DB_USER=''
+DB_PORT=''
+DB_PASSWORD=''
 
 while IFS= read -r line
 do
