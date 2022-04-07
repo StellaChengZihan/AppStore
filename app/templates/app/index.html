@@ -7,12 +7,14 @@
     <br/><br/>
     <table border=1>
         <thead>
-            <th>Owner</th>
-            <th>Room Name</th>
-            <th>ID</th>
-            <th>Neighborhood</th>
-            <th>Room Type</th>
+            <th>Place ID</th>
+            <th>Account ID</th>
+            <th>Title</th>
+            <th>Rating</th>
+            <th>Country</th>
+            <th>City</th>
             <th>Price</th>
+            <th>Type</th>
         </thead>
         {% for cust in records %}
         <tr>
@@ -22,14 +24,16 @@
             <td> {{ cust.3 }} </td>
             <td> {{ cust.4 }} </td>
             <td> {{ cust.5 }} </td>
+            <td> {{ cust.6 }} </td>
+            <td> {{ cust.7 }} </td>
             <td>
-                <a href="view/{{cust.2}}"><button>View</button></a> | 
-                <a href="edit/{{cust.2}}"><button>Edit</button></a>
+                <a href="view/{{cust.0}}"><button>View</button></a> | 
+                <a href="edit/{{cust.0}}"><button>Edit</button></a>
                 | 
                 <form method="POST" style="display: inline;">
                 {% csrf_token %}
-                <input type="hidden" name="id" value="{{cust.2}}"/>
-                <button onclick="return confirm('Are you sure you want to delete {{cust.2}}?');" type="submit" name="action" value="delete">Delete</button> 
+                <input type="hidden" name="ID_place" value="{{cust.0}}"/>
+                <button onclick="return confirm('Are you sure you want to delete {{cust.0}}? Accomodations with existing bookings cannot be deleted.');" type="submit" name="action" value="delete">Delete</button> 
               </form></td>
         </tr>
         {% endfor %}
