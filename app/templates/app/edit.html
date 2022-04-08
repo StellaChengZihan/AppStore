@@ -12,11 +12,12 @@
         <!-- form -->
         
         <div id="div_id_title" class="control-group"> <label for="id_title" class="control-label requiredField">
-        Title<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="title" maxlength="64" class="textinput textInput" required="" id="id_title"> </div> </div> 
+        Title<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="title" value="{{obj.2}}" maxlength="64" class="textinput textInput" required="" id="id_title"> </div> </div> 
         
         <div id="div_id_country" class="control-group"> <label for="id_country" class="control-label requiredField">
-        Country:<span class="asteriskField">*</span> </label> <select id="country" name="country" required>
+        Country:</label> <select id="country" name="country" required>
     <datalist id="country">
+   <option value="{{obj.4}}"></option>
    <option value="Afganistan">Afghanistan</option>
    <option value="Albania">Albania</option>
    <option value="Algeria">Algeria</option>
@@ -263,74 +264,83 @@
    <option value="Zaire">Zaire</option>
    <option value="Zambia">Zambia</option>
    <option value="Zimbabwe">Zimbabwe</option>
-</datalist> </select> <br>
+            </datalist> </select><br>
             
         <div id="div_id_city" class="control-group"> <label for="id_city" class="control-label requiredField">
-        City<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="city" maxlength="16" class="textinput textInput" required="" id="id_city"> </div> </div> 
+        City<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="city" value="{{obj.5}}" maxlength="16" class="textinput textInput" required="" id="id_city"> </div> </div> 
         
         <div id="div_id_price_per_night" class="control-group"> <label for="id_price_per_night" class="control-label requiredField">
-        Price ($USD) <span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="price_per_night" maxlength="16" class="textinput textInput" required="" id="id_price_per_night"> </div> </div> 
+        Price ($USD) <span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" value="{{obj.6}}" name="price_per_night" maxlength="16" class="textinput textInput" required="" id="id_price_per_night"> </div> </div> 
         
         <div id="div_id_type" class="control-group"> <label for="id_type" class="control-label requiredField">
-        Type:<span class="asteriskField">*</span> </label> <select name="type" id="type" required>
+        Type:</label> <select name="type" value="{{obj.7}}" id="type" required>
+<option value="{{obj.7}}"></option>
   <option value="House">House</option>
   <option value="Apartment">Apartment</option>
   <option value="Condiminium">Condominium</option>
             </select></div><br>
             
         <div id="div_id_address" class="control-group"> <label for="id_address" class="control-label requiredField">
-        Address<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="address" maxlength="16" class="textinput textInput" required="" id="id_address"> </div> </div> 
+        Address<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="address" value="{{obj.8}}" maxlength="16" class="textinput textInput" required="" id="id_address"> </div> </div> 
         
         <div id="div_id_guests" class="control-group"> <label for="id_guests" class="control-label requiredField">
-        Number of Guests Allowed<span class="asteriskField">*</span> <input type="number" id="guests" name="guests" min="1" max="25" required> </label> </div> <br>
+        Number of Guests Allowed<span class="asteriskField">*</span> <input type="number" id="guests" name="guests" value="{{obj.9}}" min="1" max="25" required> </label> </div> <br>
         
         <div id="div_id_bedrooms" class="control-group"> <label for="id_bedrooms" class="control-label requiredField">
-        Number of Bedrooms Available<span class="asteriskField">*</span> </label> <input type="number" id="bedrooms" name="bedrooms" min="1" max="20" required> </label> </div> <br>
+        Number of Bedrooms Available<span class="asteriskField">*</span> </label> <input type="number" id="bedrooms" name="bedrooms" value="{{obj.10}}" min="1" max="20" required> </label> </div> <br>
         
         <div id="div_id_kitchen" class="control-group"> <label for="id_kitchen" class="control-label requiredField">
-        Kitchen:<span class="asteriskField">*</span> </label> <select name="kitchen" id="kitchen" required>
+        Kitchen:</label> <select name="kitchen" id="kitchen" required>
+     <option value="{{obj.11}}"></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
          </select> </label> </div> <br>
             
         <div id="div_id_parking" class="control-group"> <label for="id_bedrooms" class="control-label requiredField">
-        Parking:<span class="asteriskField">*</span> </label> <select name="parking" id="parking" required>
+        Parking:</label> <select name="parking" id="parking" required>
+     <option value="{{obj.12}}"></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
   </select>  </label> </div> <br>
             
         <div id="div_id_wifi" class="control-group"> <label for="id_wifi" class="control-label requiredField">
-        Wifi:<span class="asteriskField">*</span> </label> <select name="wifi" id="wifi" required>
+        Wifi:</label> <select name="wifi" id="wifi" required>
+               <option value="{{obj.13}}"></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
   </select> </label> </div>  <br>
             
         <div id="div_id_smoking_allowed" class="control-group"> <label for="id_smoking_allowed" class="control-label requiredField">
-        Smoking Allowed:<span class="asteriskField">*</span> </label> <select name="smoking_allowed" id="smoking_allowed" required>
+        Smoking Allowed:</label> <select name="smoking_allowed" id="smoking_allowed" required>
+               <option value="{{obj.14}}"></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
   </select> </label> </div>  <br>
             
         <div id="div_id_pets_allowed" class="control-group"> <label for="id_pets_allowed" class="control-label requiredField">
-        Pets Allowed:<span class="asteriskField">*</span> </label> <select name="pets_allowed" id="pets_allowed" required>
+        Pets Allowed:</label> <select name="pets_allowed" id="pets_allowed" required>
+               <option value="{{obj.15}}"></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
   </select>  </label> </div> <br>
          
         <div id="div_id_air_conditioning" class="control-group"> <label for="id_air_conditioning" class="control-label requiredField">
-        Air-conditioning:<span class="asteriskField">*</span> </label> <select name="air_conditioning" id="air_conditioning" required>
+        Air-conditioning:</label> <select name="air_conditioning" id="air_conditioning" required>
+               <option value="{{obj.16}}"></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
   </select> </label> </div>  <br>
          
         <div id="div_id_TV" class="control-group"> <label for="id_TV" class="control-label requiredField">
-        TV:<span class="asteriskField">*</span> </label> <select name="TV" id="TV" required>
+        TV:</label> <select name="TV" id="TV" required>
+               <option value="{{obj.17}}"></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
   </select> </label> </div>  <br>
             
         <div id="div_id_washing_machine" class="control-group"> <label for="id_washing_machine" class="control-label requiredField">
-        Washing Machine:<span class="asteriskField">*</span> </label> <select name="washing_machine" id="washing_machine" required>
+        Washing Machine:</label> <select name="washing_machine" id="washing_machine" required>
+               <option value="{{obj.18}}"></option>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
   </select> </label> </div> <br>
